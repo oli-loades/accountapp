@@ -11,6 +11,7 @@ import com.qa.persistence.domian.Account;
 
 @RestController
 @RequestMapping("/account")
+@CrossOrigin(origins = "http://localhost:8080")
 public class AccountController {
 
 	@Autowired
