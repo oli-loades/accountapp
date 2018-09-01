@@ -1,13 +1,6 @@
 <template>
-    <div>
-      <table>
-        <thead>
-        <th>ID</th> <th>First Name</th> <th> Last Name</th> <th> Account Number </th>
-        </thead>
-        <tr v-for="account in accounts" v-on:key="id">
-          <td>{{account.id}}</td> <td>{{account.firstname}}</td> <td> {{account.surname}}</td> <td> {{account.accountNumber}}</td>
-        </tr>
-      </table>
+    <div class="tableContainer">
+       <b-table hover :items="accounts"></b-table>
     </div>
 </template>
 
@@ -35,5 +28,8 @@
 </script>
 
 <style scoped>
-
+.tableContainer{
+  margin: 5px;
+  padding: 2px;
+}
 </style>
