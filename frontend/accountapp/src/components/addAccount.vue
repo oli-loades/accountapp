@@ -6,7 +6,8 @@
     <input type=text v-model=account.surname><br>
     <p>Account number</p>
     <input type=text v-model=account.accountNumber><br>
-    <p>{{response}}</p>
+    <button @click='add()'>Add Account</button><br>
+    <p>{{msg}}</p>
   </div>
 </template>
 
@@ -17,7 +18,7 @@
     name: "addAccount",
     data() {
       return {
-        response: "",
+        msg: "",
         account: {
           firstname: "",
           surname: "",
@@ -26,10 +27,10 @@
       }
     },
     methods: {
-      addAccount() {
+      add: function() {
         axios.post('http://www.localhost:8182/account/add', this.account)
           .then(response => {
-            this.response = response.data
+            this.msg = response.data;
             console.log(response.data)
           })
           .catch(e => {
