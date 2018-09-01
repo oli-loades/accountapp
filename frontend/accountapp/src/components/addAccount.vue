@@ -7,7 +7,7 @@
     <p>Account number</p>
     <input type=text v-model=account.accountNumber><br>
     <button @click='add()'>Add Account</button><br>
-    <p>{{msg}}</p>
+    <p>{{msg.message}}</p>
   </div>
 </template>
 
