@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <b-navbar variant="primary" type="dark">
+    <b-navbar toggleable="md" variant="dark" type="dark" fixed="'top">
+      <b-navbar-brand>Accountapp</b-navbar-brand>
       <b-navbar-nav>
         <b-nav-item v-for="routes in links"
                     v-bind:key="routes.id"
