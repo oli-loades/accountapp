@@ -1,6 +1,6 @@
 <template>
     <div>
-      <b-navbar variant="primary" type="dark">
+      <b-navbar variant="primary" type="dark" class='navbar'>
         <b-navbar-nav>
         <b-nav-item v-for="routes in links"
                      v-bind:key="routes.id"

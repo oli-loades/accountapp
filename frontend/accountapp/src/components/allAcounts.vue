@@ -6,7 +6,12 @@
 
 <script>
     export default {
-        name: "allAcounts"
+        name: "allAcounts",
+      data() {
+        return {
+          accounts :[]
+        }
+      }
     }
 </script>
 
