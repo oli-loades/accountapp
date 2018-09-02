@@ -1,7 +1,6 @@
 # accountapp
 
-##Backend
-### Build Setup
+## Backend Build Setup
 ``` bash
 # navigate to backend directory
 cd backend
@@ -13,9 +12,7 @@ make docker_start_mysql
 make docker_start_accountapp
 ```
 
-##Frontend
-
-### Build Setup
+## Frontend Build Setup
 
 ``` bash
 # navigate to backend directory
