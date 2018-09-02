@@ -1,18 +1,31 @@
 # accountapp
 
-> A Vue.js project
+##Backend
+### Build Setup
+``` bash
+# navigate to backend directory
+cd backend
 
-## Build Setup
+# build and strat MySQL image
+make docker_start_mysql
+
+# build and start spring-boot project
+make docker_start_accountapp
+```
+
+##Frontend
+
+### Build Setup
 
 ``` bash
+# navigate to backend directory
+cd frontend/accountapp
+
 # install dependencies
 npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
