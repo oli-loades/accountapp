@@ -68,6 +68,7 @@ npm install
 npm run dev
 
 ```
+go to localhost:8080 to view the webapp
 
 <<<<<<< HEAD
 
