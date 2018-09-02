@@ -30,8 +30,6 @@ make docker_start_accountapp
 
 ``` bash
 # navigate to backend directory
-=======
->>>>>>> 4005d032b6023e49c46272b2c4661e780e2f0c90
 cd frontend/accountapp
 
 # install dependencies
