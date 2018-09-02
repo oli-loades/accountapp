@@ -1,4 +1,18 @@
 # accountapp
+Simple account management webapp created using Spring-boot and Vue.js.
+
+-   [Spring boot](https://spring.io/projects/spring-boot) for web servicess and access to mysql
+
+-   [Vue JS](https://vuejs.org/) for creation of web pages and user interfaces
+
+-   [MySQL](https://www.mysql.com/) for relational data storage
+
+-   [Docker](https://www.docker.com/) Removes the need to setup mysql database
+
+## Prerequisite
+- Maven 
+- Node js
+- Docker
 
 ## Backend Build Setup
 ``` bash
