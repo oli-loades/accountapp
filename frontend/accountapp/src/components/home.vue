@@ -16,7 +16,7 @@
       <v-layout row wrap>
 
         <v-flex xs4>
-          <v-card dark color="dark">
+          <v-card dark color="dark" href="https://vuejs.org">
               <img src="../assets/logo.png">
               <div class='overlay'>
                 <div class='text'>
@@ -29,7 +29,7 @@
         </v-flex>
 
         <v-flex xs4>
-          <v-card dark color="dark">
+          <v-card dark color="dark" href="https://spring.io/projects/spring-boot">
             <img src="../assets/spring-boot-logo.png">
             <div class='overlay'>
               <div class='text'>
@@ -41,7 +41,7 @@
         </v-flex>
 
         <v-flex xs4>
-          <v-card dark color="dark">
+          <v-card dark color="dark" href="https://vuetifyjs.com/en/">
             <img  src="../assets/vuetify.png">
             <div class='overlay'>
               <div class='text'>
@@ -53,7 +53,7 @@
         </v-flex>
 
         <v-flex xs4>
-          <v-card dark color="dark">
+          <v-card dark color="dark" href="https://www.docker.com/">
             <img  src="../assets/mono-moby.png">
             <div class='overlay'>
               <div class='text'>
@@ -65,7 +65,7 @@
         </v-flex>
 
         <v-flex xs4>
-          <v-card dark color="dark">
+          <v-card dark color="dark" href="https://www.mysql.com/">
             <img class="img-fluid rounded-circle" src="../assets/logo-mysql.png">
             <div class='overlay'>
               <div class='text'>
@@ -77,7 +77,7 @@
         </v-flex>
 
         <v-flex xs4>
-          <v-card dark color="dark">
+          <v-card dark color="dark" href="https://nodejs.org/en/">
             <img  src="../assets/Node.js_logo.svg">
             <div class='overlay'>
               <div class='text'>
