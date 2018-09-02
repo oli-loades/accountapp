@@ -70,7 +70,3 @@ npm run dev
 ```
 go to localhost:8080 to view the webapp
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4005d032b6023e49c46272b2c4661e780e2f0c90
