@@ -1,35 +1,45 @@
 <template>
-  <div class='form'>
-    <b-alert show>{{msg.message}}</b-alert>
-    <b-form @submit="add()" @reset="reset()">
-      <b-form-group label="First Name:"
-                    label-for="firstNameFeild">
-        <b-form-input id="firstNameFeild"
-                      v-model="account.firstname"
-                      type="text"
-                      placeholder="Enter your first name"></b-form-input>
-      </b-form-group>
+  <div>
+    <v-app id="inspire">
 
-      <b-form-group label="Surname:"
-                    label-for="surnameFeild">
-        <b-form-input id="surnameFeild"
-                      v-model="account.surname"
-                      type="text"
-                      placeholder="Enter your surname"></b-form-input>
-      </b-form-group>
+      <v-alert
+        :value="!alert"
+        color="success"
+        transition="scale-transition">
+        Account successfully added.
+      </v-alert>
 
-      <b-form-group label="Account Number:"
-                    label-for="accountNumberField">
-        <b-form-input id="accountNumberField"
-                      v-model="account.accountNumber"
-                      type="text"
-                      placeholder="Enter your account number"></b-form-input>
-      </b-form-group>
+      <v-container>
 
-      <b-button  type="submit" variant="primary">Add Account</b-button>
-      <b-button  type="reset" variant="danger">Reset</b-button>
+        <v-form ref="form" v-model="valid" lazy-validation>
+          <v-layout align-center justify-center column/>
+          <v-text-field
+            v-model="account.firstname"
+            :rules="rule"
+            label="First name"
+            required></v-text-field>
+          <v-text-field
+            v-model="account.surname"
+            :rules="rule"
+            label="Surname"
+            required></v-text-field>
+          <v-text-field
+            v-model="account.accountNumber"
+            :rules="rule"
+            label="Account number"
+            required></v-text-field>
 
-    </b-form>
+          <div>
+            <v-btn outline :disabled="!valid" @click="add">submit
+            </v-btn>
+            <v-btn outline @click="reset">clear</v-btn>
+          </div>
+
+        </v-form>
+
+      </v-container>
+
+    </v-app>
   </div>
 </template>
 
@@ -41,6 +51,9 @@
     data() {
       return {
         msg: "",
+        alert: true,
+        valid: true,
+        rule: [v => !!v || 'Required'],
         account: {
           firstname: "",
           surname: "",
@@ -50,29 +63,27 @@
     },
     methods: {
       add: function () {
-        axios.post('http://www.localhost:8182/account/add', this.account)
-          .then(response => {
-            this.msg = response.data;
-            console.log(response.data)
-          })
-          .catch(e => {
-            this.errors.push(e)
-          })
+        if (this.$refs.form.validate()) {
+          this.alert = false
+          axios.post('http://www.localhost:8182/account/add', this.account)
+            .then(response => {
+              this.msg = response.data;
+              console.log(response.data)
+            })
+            .catch(e => {
+              this.errors.push(e)
+            })
+        }
       },
       reset: function () {
-        this.account.firstname = '';
-        this.account.surname = '';
-        this.account.accountNumber = '';
+        this.alert = true
+        this.$refs.form.reset()
       }
     }
   }
 </script>
 
 <style scoped>
-  .form {
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-  }
+
 
 </style>

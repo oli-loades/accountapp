@@ -1,43 +1,47 @@
 <template>
   <div id="app">
-    <b-navbar toggleable="md" variant="dark" type="dark" fixed="'top">
-      <b-navbar-brand>Accountapp</b-navbar-brand>
-      <b-navbar-nav>
-        <b-nav-item v-for="routes in links"
-                    v-bind:key="routes.id"
-                    :to="`${routes.page}`">{{routes.text}}</b-nav-item>
-      </b-navbar-nav>
-    </b-navbar>
-    <router-view/>
+    <v-app id="navi">
+      <v-toolbar dark>
+        <v-toolbar-title>Accountapp</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-items>
+          <v-btn flat v-for="routes in links"
+                 v-bind:key="routes.id"
+                 :to="`${routes.page}`">{{routes.text}}
+          </v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
+      <router-view/>
+    </v-app>
   </div>
 </template>
 
 <script>
 
-export default {
-  name: 'app',
-  data() {
-    return {
-      links: [
-        {
-          id: 0,
-          text: 'Home',
-          page:'/'
-        },
-        {
-          id: 1,
-          text: 'Add Account',
-          page:'/add'
-        },
-        {
-          id: 2,
-          text: 'View All',
-          page:'/all'
-        }
-      ]
+  export default {
+    name: 'app',
+    data() {
+      return {
+        links: [
+          {
+            id: 0,
+            text: 'Home',
+            page: '/'
+          },
+          {
+            id: 1,
+            text: 'Add Account',
+            page: '/add'
+          },
+          {
+            id: 2,
+            text: 'View All',
+            page: '/all'
+          }
+        ]
+      }
     }
   }
-}
 </script>
 
 <style>
