@@ -11,7 +11,7 @@ Simple account management webapp created using Spring-boot and Vue.js.
 
 ## Prerequisite
 - Maven 
-- Node js
+- npm
 - Docker
 
 ## Backend Build Setup
